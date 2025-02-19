@@ -3,7 +3,7 @@ name: CI/CD for Flask App on KIND
 on:
   push:
     branches:
-      - main  # Change this to your main development branch
+      - main  
 
 jobs:
   build-and-deploy:
