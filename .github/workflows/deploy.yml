@@ -27,29 +27,3 @@ jobs:
         run: |
           docker build -t nihal009/flask-app:v1 .
           docker push nihal009/flask-app:v1
-
-      - name: Set Up Kubectl
-        run: |
-          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-          chmod +x kubectl
-          sudo mv kubectl /usr/local/bin/
-
-      - name: Set Up KIND Cluster
-        run: |
-          curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
-          chmod +x ./kind
-          sudo mv ./kind /usr/local/bin/kind
-          kind create cluster
-
-      - name: Load Image into KIND
-        run: |
-          kind load docker-image nihal009/flask-app:v1
-
-      - name: Apply Kubernetes Manifests
-        run: |
-          kubectl apply -f k8s/deployment.yml
-          kubectl apply -f k8s/service.yml
-
-      - name: Wait for Deployment
-        run: |
-          kubectl rollout status deployment flask-app
