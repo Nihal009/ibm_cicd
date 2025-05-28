@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return """updated app"""
+    return """28-05-2025"""
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
