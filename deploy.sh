@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "[+] Pulling latest Docker image"
-docker pull <dockerhub-username>/flask-api:latest
+docker pull nihal009/flask-app:v1
 
 echo "[+] Redeploying to Kubernetes"
-kubectl apply -f /absolute/path/to/k8s/deployment.yaml
+kubectl apply -f k8s/deployment.yml
 
 echo "[+] Deployment complete"

@@ -1,0 +1,11 @@
+kubectl get pods
+kubectl get svc
+kubectl get endpoints flask-service
+
+python3 webhook_server.py
+
+ngrok http 9000
+
+configure github webhook
+kubectl port-forward service/flask-service 5000:5000
+
