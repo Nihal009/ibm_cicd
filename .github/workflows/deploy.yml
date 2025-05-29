@@ -25,8 +25,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t nihal009/flask-app:latest .
-          docker push nihal009/flask-app:latest
+          docker build -t nihal009/flask-app:v1 .
+          docker push nihal009/flask-app:v1
       - name: Trigger local webhook for Kubernetes redeploy
         run: |
             curl -X POST https://f48b-2409-40f2-3041-7a2a-4258-5907-20f4-f095.ngrok-free.app/webhook
