@@ -25,5 +25,5 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t nihal009/flask-app:v1 .
-          docker push nihal009/flask-app:v1
+          docker build -t nihal009/flask-app:latest .
+          docker push nihal009/flask-app:latest
