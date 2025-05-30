@@ -29,4 +29,4 @@ jobs:
           docker push nihal009/flask-app:v1
       - name: Trigger local webhook for Kubernetes redeploy
         run: |
-            curl -X POST https://2804-2409-40f2-3012-586d-214a-6214-f570-6cdf.ngrok-free.app/webhook
+            curl -X POST https://f659-103-89-233-186.ngrok-free.app/webhook
